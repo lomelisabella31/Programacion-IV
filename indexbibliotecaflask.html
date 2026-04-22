@@ -1,0 +1,21 @@
+<h1>Libros de Bella</h1>
+
+<form action="/buscar" method="post">
+    <input type="text" name="dato" placeholder="buscar">
+    <button>Buscar</button>
+</form>
+
+<a href="/agregar">Agregar libro</a>
+
+<ul>
+{% for l in libros %}
+    <li>
+        {{l.titulo}} - {{l.autor}} - {{l.genero}} - {{l.estado}}
+        <a href="/editar/{{l.id}}">Editar</a>
+        <a href="/eliminar/{{l.id}}">Eliminar</a>
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
