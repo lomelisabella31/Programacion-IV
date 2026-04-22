@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<form action="/buscar" method="post">
+    <input type="text" name="dato" placeholder="buscar">
+    <button>Buscar</button>
+</form>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Titulo</th>
+    <th>Autor</th>
+    <th>Genero</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+</tr>
+
+{% for l in libros %}
+<tr>
+    <td>{{l.id}}</td>
+    <td>{{l.titulo}}</td>
+    <td>{{l.autor}}</td>
+    <td>{{l.genero}}</td>
+    <td>{{l.estado}}</td>
+    <td>
+        <a href="/editar/{{l.id}}">Editar</a>
+        <a href="/eliminar/{{l.id}}">Eliminar</a>
+    </td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
