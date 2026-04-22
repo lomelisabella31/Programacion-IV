@@ -55,7 +55,6 @@ def agua_altos():
     for x in lista[:20]:  # no spamear tanto
         print("-", x)
 
-
 def evoluciones():
     nombre = input("Dime un pokemon inicial: ").lower()
 
